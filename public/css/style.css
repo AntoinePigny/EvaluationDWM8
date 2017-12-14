@@ -2,7 +2,7 @@
 
 /*
 font-family: 'Mukta', sans-serif;
-
+    font-family: 'Flamenco', cursive;
 font-family: 'Poppins', sans-serif;
 */
 
@@ -58,7 +58,13 @@ table {
     font-family: 'Mukta', sans-serif;
 
 }
-
+.home-menu-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 .flex-container {
     display: flex;
     flex-direction: column;
@@ -69,6 +75,46 @@ h1{
     font-family: 'Poppins', sans-serif;
     font-size: 55px;
 }
+
+.home-category-button {
+    width: 900px;
+    height: 100px;
+    background: #122b40;
+    margin-bottom: 50px;
+}
+
+.home-category-button a {
+    display: block;
+    height: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.home-category-label {
+    font-family: 'Flamenco', cursive;
+    font-size: 20px;
+    margin-bottom: 5px;
+
+}
+
+.records {
+    background-image: url("../images/vinyl.jpg");
+    background-position: -225px -439px;
+}
+
+.artists {
+    background-image: url("../images/artist.jpg");
+    background-position: center;
+}
+
+.labels {
+    background-image: url("../images/studio.jpg");
+    background-position: top -471px left -321px;
+ }
+
+
 
 
 

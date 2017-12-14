@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Record extends Model
 {
+    public $timestamps = false;
     public function label() {
         //peut etre utilisée en place de belongsTo, et sert pour une relation one2many
         return $this->hasOne('App\Label', 'id', 'label_id');

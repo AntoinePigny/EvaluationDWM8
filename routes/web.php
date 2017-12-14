@@ -12,3 +12,13 @@
 */
 
 Route::get('/', 'BaseController@index');
+
+Route::get('/records', 'BaseController@recordsList');
+
+Route::get('/newrecord', 'BaseController@newRecord');
+
+Route::post('/newrecord/insert', 'RecordController@insertRecord');
+
+Route::get('/record/delete/{id}', 'RecordController@deleteRecord');
+Route::get('/record/update/{id}', 'RecordController@updateForm');
+Route::post('/record/update', 'RecordController@updateAction');

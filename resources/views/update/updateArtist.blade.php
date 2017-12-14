@@ -15,6 +15,10 @@
             {{{ Form::select('artists[]', $artists, $record->artists, ['size' => count($artists), 'multiple' => true], ['class' => 'form-control']) }}}
         </div>
         <div class="col-12 form-group">
+            {{{ Form::label('Genre(s)') }}}
+            {{{ Form::select('genres[]', $genres, $record->genres, ['size' => count($genres), 'multiple' => true], ['class' => 'form-control']) }}}
+        </div>
+        <div class="col-12 form-group">
             {{{ Form::label('Label') }}}
             {{{ Form::select('label', $labels, $record->label->id, [], ['class' => 'form-control']) }}}
         </div>

@@ -9,10 +9,12 @@ Voici un peu de lecture pour Mr Morgan Corroyer, formateur émérite à la cheve
 - Mise en place de relations One2Many et Many2Many via les méthodes d'Eloquent
 - Recupération des données de la bdd et affichage dans un tableau sur la homepage (pour le stock de disques)
 - Stylisation minimum de la page, juste pour pouvoir travailler.
-
-### Etapes restantes
 - Insertion de nouvelles données via l'app
 - Mise à jour données via l'app
+
+
+
+### Etapes restantes
 - Recherches de disques via artiste ou via label par exemple.
 - Récupération de données complémentaires via l'app
 - Habillage et utilisation de scripts JS pour celui ci.

@@ -12,7 +12,9 @@
 </head>
 <body>
 <header>
+    @unless($flag == true)
         @include('layouts.menu')
+    @endunless
 </header>
 <main>
     @yield('main')

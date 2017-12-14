@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Record;
 use App\Label as Label;
 use App\Artist as Artist;
+use App\Genre as Genre;
 
 use Illuminate\Http\Request;
 
@@ -20,17 +21,23 @@ class RecordController extends Controller
         $record->save();
         //pour une table intermediaire, utiliser la methode atach APRES le save car elle necessite l'id généré par le save
         $record->artists()->attach($request->artists);
+        $record->genres()->attach($request->genres);
         return redirect('/records');
     }
     public function deleteRecord(Request $request, $id)
     {
         $record = Record::find($id);
         $record->artists()->detach();
+        $record->genres()->detach();
         $record->delete();
         return redirect('/records');
     }
+
+
+
     public function updateForm(Request $request, $id)
     {
+        $flag = false;
         $record = Record::find($id);
         $labelsAll = Label::all();
         $labels = [];
@@ -42,8 +49,16 @@ class RecordController extends Controller
         foreach ($artistsAll as $value) {
             $artists[$value->id] = $value->name;
         }
-        return view('updateRecord', ['labels' => $labels, 'artists' => $artists, 'record' => $record]);
+        $genresAll = Genre::all();
+        $genres = [];
+        foreach ($genresAll as $value) {
+            $genres[$value->id] = $value->name;
+        }
+        return view('/update/updateRecord', ['labels' => $labels, 'artists' => $artists, 'genres' => $genres,  'record' => $record, 'flag' => $flag]);
     }
+
+
+
 
     public function updateAction(Request $request)
     {
@@ -54,6 +69,8 @@ class RecordController extends Controller
         $record->save();
         $record->artists()->detach();
         $record->artists()->attach($request->artists);
+        $record->genres()->detach();
+        $record->genres()->attach($request->genres);
         return redirect('/records');
     }
 }

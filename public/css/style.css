@@ -116,9 +116,18 @@ h1{
 
 
 
+/*
+        VIEW ARTISTES
+*/
 
+.artist-list-title {
+    margin-bottom: 0;
+}
 
-
+.artist-list-flavor {
+    font-family: 'Poppins', sans-serif;
+    margin-top: 5px;
+}
 
 
 
@@ -156,3 +165,4 @@ h1{
     }
     */
 }
+

@@ -18,3 +18,13 @@ Voici un peu de lecture pour Mr Morgan Corroyer, formateur émérite à la cheve
 - Recherches de disques via artiste ou via label par exemple.
 - Récupération de données complémentaires via l'app
 - Habillage et utilisation de scripts JS pour celui ci.
+
+### Technos utilisées
+
+- Migrations et creation DB 'a la main'
+- Seeding via Faker
+-
+-
+
+### Points of interest
+- Pour afficher mon menu sur toutes les vues sauf une j'ai créé un flag que je renvoie dans la vue, (j'ai voulu le faire avec blade, donc solution fonctionnelle mais peut etre pas tres élégante)

@@ -1,6 +1,20 @@
 
 
 /*
+ Light shades  F0EEEF
+ Light accent  C1824C
+ Main brand color 88989E
+ Dark accent 7B3330
+ Dark shades 434447
+
+ Regent Gray 	#88989e 	Primary
+ Abbey 	        #434447 	Info
+ Aqua Forest 	#5ea867 	Success
+ Golden Grass 	#db982f 	Warning
+ Pomegranate 	#f44336 	Danger
+
+
+
 font-family: 'Mukta', sans-serif;
     font-family: 'Flamenco', cursive;
 font-family: 'Poppins', sans-serif;
@@ -81,6 +95,13 @@ h1{
     height: 100px;
     background: #122b40;
     margin-bottom: 50px;
+    transition: box-shadow 0.2s ease;
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.12),0px 3px 3px 0px rgba(0,0,0,0.24);
+}
+
+.home-category-button:hover {
+    z-index: 2;
+    box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.12),0px 8px 8px 0px rgba(0,0,0,0.24);
 }
 
 .home-category-button a {

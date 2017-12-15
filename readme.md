@@ -24,7 +24,7 @@ Voici un peu de lecture pour Mr Morgan Corroyer, formateur émérite à la cheve
 - Seeding et Factories (Faker)
 - Jquery Select2 pour des selects multiples
 - Animations CSS
--
+
 
 ### Points of interest
 - Pour afficher mon menu sur toutes les vues sauf une j'ai créé un flag que je renvoie dans la vue, (j'ai voulu le faire avec blade, donc solution fonctionnelle mais peut etre pas tres élégante)
@@ -32,7 +32,7 @@ Voici un peu de lecture pour Mr Morgan Corroyer, formateur émérite à la cheve
 
 ### Difficultés rencontrées
 - la methode paginate fonctionne et je recevais bien l'array de données dans la vue mais la pethode links etait indiquée non existante tout comme render => Pagination non faite.
-- Globalement beaucoup de temps perdu sur le style. Pour un resultat décevant. Ce qui m'a laissé trop peu de temps pour ajouter des fonctionnalités supplémentaires.
+- Globalement beaucoup de temps perdu sur le style. Pour un resultat décevant. Ce qui m'a laissé trop peu de temps pour ajouter des fonctionnalités supplémentaires. De loin le pire problème, j'aurais du mettre bootstrap.
 
 ### Points de contentement
 -L'élaboration de la db ainsi que le peuplement, l'edition et l'affichage de celle ci ont été assez simples,

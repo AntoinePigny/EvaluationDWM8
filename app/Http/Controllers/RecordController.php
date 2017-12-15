@@ -73,4 +73,13 @@ class RecordController extends Controller
         $record->genres()->attach($request->genres);
         return redirect('/records');
     }
+
+    public function updateStock(Request $request)
+    {
+        $record = Record::find($request->id);
+        $record->stock = $request->stock;
+        $record->save();
+        return redirect('/records');
+
+    }
 }

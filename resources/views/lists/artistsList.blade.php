@@ -5,7 +5,7 @@
     <section class="flex-container">
         <h1 class="artist-list-title">Les Artistes</h1>
         <h2 class="artist-list-flavor">(not by Santigold)</h2>
-        <table class="table">
+        <table class="container-table">
             <thead>
             <tr>
                 <th>Nom de l'artiste</th>
@@ -13,7 +13,7 @@
                 <th>Age</th>
                 <th>Pays de Naissance</th>
                 <th>Delete</th>
-                <th>Upuh-datuh !!</th>
+                <th>Mise à jour</th>
             </tr>
             </thead>
             <tbody>
@@ -22,7 +22,7 @@
                     <td>{{ $artist->name }}</td>
                     <td>
                         @foreach($artist->records as $record)
-                            <span>{{$record->name}}</span>
+                            <p>{{$record->name}}</p>
                         @endforeach
                     </td>
                     <td>{{ $artist->age }}</td>
@@ -32,20 +32,22 @@
                     @endif
 
                     <td>
-                        <form method="get" action="/artist/delete/{{$artist->id}}">
+                        <form method="get"  class="form-in-table" action="/artist/delete/{{$artist->id}}">
                             {{ csrf_field() }}
-                            <button type="submit">
-                                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                            <button type="submit" class="delete-button">
+                                DELETE
                             </button>
                         </form>
                     </td>
                     <td>
-                        <form method="get" action="/artist/update/{{$artist->id}}">
-                            {{ csrf_field() }}
-                            <button type="submit">
-                                <i class="fa fa-pencil" aria-hidden="true"></i>
-                            </button>
-                        </form>
+                        <div class="form-in-table">
+                            <form method="get" action="/artist/update/{{$artist->id}}">
+                                {{ csrf_field() }}
+                                <button type="submit" class="update-button">
+                                   UPDATE
+                                </button>
+                            </form>
+                        </div>
                     </td>
                 </tr>
             @endforeach

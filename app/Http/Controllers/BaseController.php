@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Country;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 use App\Record as Record;
 use App\Label as Label;
 use App\Artist as Artist;
@@ -21,14 +23,14 @@ class BaseController extends Controller
     public function recordsList() {
         $flag = false;
         $records = Record::all();
-        return view('lists/recordsList', ['records' => $records, 'flag' => $flag]);
+        return view('lists/recordsList', ['records' => $records->sortBy('name'), 'flag' => $flag]);
     }
 
     //Methode pour recuperer et afficher tous les artistes de la bdd
     public function artistsList() {
         $flag = false;
         $artists = Artist::all();
-        return view('lists/artistsList', ['artists' => $artists, 'flag' => $flag]);
+        return view('lists/artistsList', ['artists' => $artists->sortBy('name'), 'flag' => $flag]);
     }
 
 

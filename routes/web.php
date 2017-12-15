@@ -25,6 +25,7 @@ Route::post('/newartist/insert', 'ArtistController@insertArtist');
 Route::get('/record/delete/{id}', 'RecordController@deleteRecord');
 Route::get('/record/update/{id}', 'RecordController@updateForm');
 Route::post('/record/update', 'RecordController@updateAction');
+Route::post('/record/updateStock', 'RecordController@updateStock');
 
 Route::get('/artist/delete/{id}', 'ArtistController@deleteArtist');
 Route::get('/artist/update/{id}', 'ArtistController@updateForm');

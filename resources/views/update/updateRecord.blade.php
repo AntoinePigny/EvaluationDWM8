@@ -1,35 +1,38 @@
 @extends('layouts.base')
-@section('title', 'New Cat')
+@section('title', 'Update Record')
 @section('main')
     <section class="container">
-
-        <h1 class="col-12">Mise a jour d'un disque</h1>
-        {!! Form::open(['url' => '/record/update']) !!}
-        {{{ Form::hidden('id', $record->id) }}}
-        <div class="col-12 form-group">
-            {{{ Form::label('Nom') }}}
-            {{{ Form::text('name', $record->name, ['class' => 'form-control']) }}}
+        <div class="form-container">
+            <h1 class="col-12">Mise a jour d'un disque</h1>
+            {!! Form::open(['url' => '/record/update']) !!}
+            {{{ Form::hidden('id', $record->id) }}}
+            <div class="form-group">
+                {{{ Form::label('name', 'Nom',['class' => 'form-label']) }}}
+                {{{ Form::text('name', $record->name, ['class' => 'form-control']) }}}
+            </div>
+            <div class="form-group">
+                {{{ Form::label('artists', 'Artiste(s)', ['class' => 'form-label']) }}}
+                {{{ Form::select('artists[]', $artists, $record->artists, ['multiple' => 'multiple', 'class' => 'js-example-basic-multiple form-control']) }}}
+            </div>
+            <div class="form-group">
+                {{{ Form::label('genres', 'Genre(s)',['class' => 'form-label'])}}}
+                {{{ Form::select('genres[]', $genres, $record->genres, ['multiple' => 'multiple', 'class' => 'js-example-basic-multiple form-control']) }}}
+            </div>
+            <div class="form-group">
+                {{{ Form::label('label', 'Label',['class' => 'form-label']) }}}
+                @if ($record->label)
+                    {{{ Form::select('label', $labels, $record->label->id, ['placeholder' => 'Choisissez un label', 'class' => 'js-example-basic-single form-control']) }}}
+                @else
+                    {{{ Form::select('label', $labels, null, ['placeholder' => 'Choisissez un label', 'class' => 'js-example-basic-single form-control']) }}}
+                @endif
+            </div>
+            <div class="form-group">
+                {{{ Form::label('stock', 'Stock',['class' => 'form-label']) }}}
+                {{{ Form::number('stock', $record->stock, ['class' => 'form-control']) }}}
+            </div>
+                {{{ Form::submit('Enregistrer', ['class' => 'submit-button']) }}}
+            {!! Form::close() !!}
         </div>
-        <div class="col-12 form-group">
-            {{{ Form::label('Artiste(s)') }}}
-            {{{ Form::select('artists[]', $artists, $record->artists, ['size' => count($artists), 'multiple' => true], ['class' => 'form-control']) }}}
-        </div>
-        <div class="col-12 form-group">
-            {{{ Form::label('Genre(s)') }}}
-            {{{ Form::select('genres[]', $genres, $record->genres, ['size' => count($genres), 'multiple' => true], ['class' => 'form-control']) }}}
-        </div>
-        <div class="col-12 form-group">
-            {{{ Form::label('Label') }}}
-            {{{ Form::select('label', $labels, $record->label->id, [], ['class' => 'form-control']) }}}
-        </div>
-        <div class="col-12 form-group">
-            {{{ Form::label('Stock') }}}
-            {{{ Form::number('stock', $record->stock, ['class' => 'form-control']) }}}
-        </div>
-        <div class="col-12 form-group">
-            {{{ Form::submit('Enregistrer') }}}
-        </div>
-        {!! Form::close() !!}
     </section>
 
 @endsection

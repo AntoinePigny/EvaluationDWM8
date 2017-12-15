@@ -4,8 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Country extends Model
+class Artist_Record extends Model
 {
     public $timestamps = false;
-    protected $tables = 'countries';
+    protected $table = 'artist_record';
 }

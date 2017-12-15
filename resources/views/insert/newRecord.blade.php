@@ -2,33 +2,32 @@
 @section('title', 'Nouveau Disque')
 @section('main')
     <section class="container">
-
-        <h1 class="col-12">Ajoutez un disque</h1>
-        {!! Form::open(['url' => '/newrecord/insert']) !!}
-        <div class="col-12 form-group">
-            {{{ Form::label('Nom') }}}
-            {{{ Form::text('name', null, ['class' => 'form-control']) }}}
+        <div class="form-container">
+            <h1 class="col-12">Nouveau disque</h1>
+            {!! Form::open(['url' => '/newrecord/insert']) !!}
+            <div class="form-group">
+                {{{ Form::label('name', 'Nom',['class' => 'form-label']) }}}
+                {{{ Form::text('name', null, ['class' => 'form-control']) }}}
+            </div>
+            <div class="form-group">
+                {{{ Form::label('artists', 'Artiste(s)', ['class' => 'form-label']) }}}
+                {{{ Form::select('artists[]', $artists, null, ['multiple' => 'multiple', 'class' => 'js-example-basic-multiple form-control']) }}}
+            </div>
+            <div class="form-group">
+                {{{ Form::label('genres', 'Genre(s)',['class' => 'form-label'])}}}
+                {{{ Form::select('genres[]', $genres, null, ['multiple' => 'multiple', 'class' => 'js-example-basic-multiple form-control']) }}}
+            </div>
+            <div class="form-group">
+                {{{ Form::label('label', 'Label',['class' => 'form-label']) }}}
+                {{{ Form::select('label', $labels, null, ['placeholder' => 'Choisissez un label', 'class' => 'js-example-basic-single form-control']) }}}
+            </div>
+            <div class="form-group">
+                {{{ Form::label('stock', 'Stock',['class' => 'form-label']) }}}
+                {{{ Form::number('stock', null, ['class' => 'form-control']) }}}
+            </div>
+            {{{ Form::submit('Enregistrer', ['class' => 'submit-button']) }}}
+            {!! Form::close() !!}
         </div>
-        <div class="col-12 form-group">
-            {{{ Form::label('Artiste(s)') }}}
-            {{{ Form::select('artists', $artists, null, ['size' => count($artists), 'multiple' => true], ['class' => 'form-control']) }}}
-        </div>
-        <div class="col-12 form-group">
-            {{{ Form::label('Genre(s)') }}}
-            {{{ Form::select('genres', $genres, null, ['size' => count($genres), 'multiple' => true], ['class' => 'form-control']) }}}
-        </div>
-        <div class="col-12 form-group">
-            {{{ Form::label('Label') }}}
-            {{{ Form::select('label', $labels, null, [], ['class' => 'form-control']) }}}
-        </div>
-        <div class="col-12 form-group">
-            {{{ Form::label('Stock') }}}
-            {{{ Form::number('stock', null, ['class' => 'form-control']) }}}
-        </div>
-        <div class="col-12 form-group">
-            {{{ Form::submit('Enregistrer') }}}
-        </div>
-        {!! Form::close() !!}
     </section>
 
 @endsection

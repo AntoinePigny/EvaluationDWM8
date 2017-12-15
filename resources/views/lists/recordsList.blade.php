@@ -4,16 +4,16 @@
 @section('main')
     <section class="flex-container">
         <h1>Stock 'n Roll</h1>
-        <table class="table">
+        <table class="container-table">
             <thead>
             <tr>
-                <th>Nom du Disque</th>
-                <th>Artiste(s)</th>
-                <th>Genres</th>
-                <th>Label</th>
-                <th>Stock(unités)</th>
-                <th>Delete</th>
-                <th>Upuh-datuh !!</th>
+                <th class="column-title">Nom du Disque</th>
+                <th class="column-title">Artiste(s)</th>
+                <th class="column-title">Genres</th>
+                <th class="column-title">Label</th>
+                <th class="column-title">Stock(unités)</th>
+                <th class="column-title">Delete</th>
+                <th class="column-title">Mise à jour</th>
             </tr>
             </thead>
             <tbody>
@@ -22,7 +22,7 @@
                     <td>{{ $record->name }}</td>
                     <td>
                         @foreach($record->artists as $artist)
-                            <span>{{$artist->name}}</span>
+                            <p>{{$artist->name}}</p>
                         @endforeach
                     </td>
                     <td>
@@ -34,7 +34,14 @@
                         <td>{{$record->label->name}}</td>
                     @else <td>Indépendant</td>
                     @endif
-                    <td>{{ $record->stock }}</td>
+                    <td>
+                        <div class="cell-flex">
+                            {!! Form::open(['url' => '/record/updateStock']) !!}
+                            {{{ Form::hidden('id', $record->id) }}}
+                            {{{ Form::number('stock', $record->stock, []) }}}
+                            {{{ Form::submit('OK') }}}
+                        </div>
+                    </td>
                     <td>
                         <form method="get" action="/record/delete/{{$record->id}}">
                             {{ csrf_field() }}

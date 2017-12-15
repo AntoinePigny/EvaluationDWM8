@@ -45,7 +45,7 @@ class ArtistController extends Controller
         foreach ($recordsAll as $value) {
             $records[$value->id] = $value->name;
         }
-        return view('updateArtist', ['countries' => $countries, 'artist' => $artist,  'records' => $records, 'flag' => $flag]);
+        return view('/update/updateArtist', ['countries' => $countries, 'artist' => $artist,  'records' => $records, 'flag' => $flag]);
     }
 
     public function updateAction(Request $request)

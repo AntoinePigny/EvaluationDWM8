@@ -1,6 +1,6 @@
 @extends('layouts.base')
 
-@section('title', 'Liste des disques')
+@section('title', 'Liste des artistes')
 @section('main')
     <section class="flex-container">
         <h1 class="artist-list-title">Les Artistes</h1>
@@ -30,24 +30,21 @@
                         <td>{{$artist->country->label}}</td>
                     @else <td>Apatride</td>
                     @endif
-
-                    <td>
+                    <td class="delete">
                         <form method="get"  class="form-in-table" action="/artist/delete/{{$artist->id}}">
                             {{ csrf_field() }}
-                            <button type="submit" class="delete-button">
+                            <button type="submit" class="cell-up-del">
                                 DELETE
                             </button>
                         </form>
                     </td>
-                    <td>
-                        <div class="form-in-table">
-                            <form method="get" action="/artist/update/{{$artist->id}}">
-                                {{ csrf_field() }}
-                                <button type="submit" class="update-button">
-                                   UPDATE
-                                </button>
-                            </form>
-                        </div>
+                    <td class="update">
+                        <form method="get" class="form-in-table" action="/artist/update/{{$artist->id}}">
+                            {{ csrf_field() }}
+                            <button type="submit" class="cell-up-del">
+                               UPDATE
+                            </button>
+                        </form>
                     </td>
                 </tr>
             @endforeach

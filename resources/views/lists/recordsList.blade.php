@@ -42,19 +42,19 @@
                             {{{ Form::submit('OK') }}}
                         </div>
                     </td>
-                    <td>
-                        <form method="get" action="/record/delete/{{$record->id}}">
+                    <td class="delete">
+                        <form method="get"  class="form-in-table" action="/record/delete/{{$record->id}}">
                             {{ csrf_field() }}
-                            <button type="submit">
-                                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                            <button type="submit" class="cell-up-del">
+                                DELETE
                             </button>
                         </form>
                     </td>
-                    <td>
-                        <form method="get" action="/record/update/{{$record->id}}">
+                    <td class="update">
+                        <form method="get" class="form-in-table" action="/record/update/{{$record->id}}">
                             {{ csrf_field() }}
-                            <button type="submit">
-                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                            <button type="submit" class="cell-up-del">
+                                UPDATE
                             </button>
                         </form>
                     </td>

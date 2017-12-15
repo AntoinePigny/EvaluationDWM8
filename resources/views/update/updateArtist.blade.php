@@ -2,8 +2,9 @@
 @section('title', 'Update Artist')
 @section('main')
     <section class="container">
+
         <div class="form-container">
-            <h1 class="col-12">Mise a jour d'un artiste</h1>
+            <h1 class="">Mise a jour d'un artiste</h1>
             {!! Form::open(['url' => '/artist/update']) !!}
             {{{ Form::hidden('id', $artist->id) }}}
             <div class="form-group">
@@ -26,7 +27,7 @@
                     {{{ Form::select('country', $countries, null, ['placeholder' => 'Choisissez un pays', 'class' => 'js-example-basic-single form-control']) }}}
                 @endif
             </div>
-                {{{ Form::submit('Enregistrer', ['class' => 'submit-button']) }}}
+            {{{ Form::submit('Enregistrer', ['class' => 'submit-button']) }}}
             {!! Form::close() !!}
         </div>
     </section>
